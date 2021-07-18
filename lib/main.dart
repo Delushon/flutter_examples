@@ -15,19 +15,14 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
 
-        body: Center(
-          child: RaisedButton.icon(onPressed: () {}, icon: Icon(Icons.print), label: Text('click me'),)
-        ),
-
-        floatingActionButton: FloatingActionButton(
-          onPressed: () { print('CLICK!'); },
-          child: Text('BUTTON'),
-          backgroundColor: Colors.green,
-        ),
-
+        body: Container(
+          color: Colors.red,
+          margin: EdgeInsets.all(45.0),
+          padding: EdgeInsets.all(20.0),
+          child: Text('text'),
       ),
 
-    );
+    ));
   }
 
 }
