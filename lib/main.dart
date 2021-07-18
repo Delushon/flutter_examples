@@ -16,11 +16,7 @@ class MyApp extends StatelessWidget {
         ),
 
         body: Center(
-          child: Text('My text', style: TextStyle(
-              fontSize: 20,
-              color: Colors.deepPurple,
-              fontFamily: 'Times New Roman'
-          ),),
+          child: Icon(Icons.print, size: 60, color: Colors.blue,)
         ),
 
         floatingActionButton: FloatingActionButton(
