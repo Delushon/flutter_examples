@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         ),
 
         body: Center(
-          child: FlatButton(onPressed: () { print('flat button clicked'); }, child: Text('CLICK'), color: Colors.blue,)
+          child: RaisedButton(onPressed: () {}, child: Text('click me'),)
         ),
 
         floatingActionButton: FloatingActionButton(
