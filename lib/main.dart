@@ -1,16 +1,25 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
   home: UserPanel(),
 ));
 
-class UserPanel extends StatelessWidget {
+class UserPanel extends StatefulWidget {
   const UserPanel({Key? key}) : super(key: key);
 
   @override
+  _UserPanelState createState() => _UserPanelState();
+}
+
+class _UserPanelState extends State<UserPanel> {
+  
+  double _count = 0.1;
+  
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.lightGreen,
       appBar: AppBar(
         title: Text('User panel'),
         centerTitle: true,
@@ -36,11 +45,19 @@ class UserPanel extends StatelessWidget {
                     Padding(padding: EdgeInsets.symmetric(horizontal: 10.0)),
                     Text('john@google.com', style: TextStyle(color: Colors.blue),)
                   ],
-                )
+                ),
+                Padding(padding: EdgeInsets.only(top: 50.0)),
+                Text('Count $_count', style: TextStyle(fontSize: 40.0),)
               ],
             )
           ],
         )
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {setState(() {
+            _count *= 2;
+          });},
+          child: Icon(Icons.add),
       ),
     );
   }
