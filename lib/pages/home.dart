@@ -18,6 +18,23 @@ class _HomeState extends State<Home> {
     todoList.addAll(['first', 'second', 'third']);
   }
 
+  void _menuOpen() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(title: Text('Меню'),),
+        body: Row(
+          children: [
+            ElevatedButton(onPressed: () {
+              Navigator.pop(context);
+              Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+            }, child: Text('На главную'))
+
+          ],
+        )
+      );
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +43,9 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         backgroundColor: Colors.lime[900],
         title: Text('Список дел'),
+        actions: [
+          IconButton(onPressed: _menuOpen, icon: Icon(Icons.menu))
+        ],
       ),
 
       body: ListView.builder(

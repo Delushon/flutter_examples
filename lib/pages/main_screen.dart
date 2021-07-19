@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
         children: [
           Text('Main screen'),
           ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, '/todo');
+            Navigator.pushReplacementNamed(context, '/todo');
           }, child: Text('Перейти далее'))
         ],
       ),
